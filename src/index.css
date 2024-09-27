@@ -1,3 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: inter;
+  @apply !font-light;
+  transition: 0.3s ease;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  :root {
+    /* Adjusting the colors to rich, pure blue */
+    --chart-1: 220 100% 85%; /* Bright light blue */
+    --chart-2: 220 90% 60%; /* Pure medium blue */
+    --chart-3: 220 80% 50%; /* Deep rich blue */
+    --chart-4: 220 70% 65%; /* Soft yet vibrant blue */
+    --chart-5: 220 80% 40%; /* Bold, rich dark blue */
+    --chart-6: 220 90% 70%; /* Deep, intense blue */
+  }
+
+  .dark {
+    /* Dark mode with deeper and cooler blues */
+    --chart-1: 220 100% 20%; /* Deep navy blue for background */
+    --chart-2: 220 90% 40%; /* Rich dark blue */
+    --chart-3: 220 80% 30%; /* Bold blue with less lightness */
+    --chart-4: 220 90% 25%; /* Deep, vivid blue */
+    --chart-5: 220 100% 15%; /* Pure, very dark navy blue */
+  }
+}
+
+.gradientDefault {
+  @apply bg-gradient-to-r from-blue-800 to-blue-500 inline-block text-transparent bg-clip-text;
+}
+
+html,
+body,
+.viewport,
+.noScrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background-color: #f9f9f6;
+}
+
+.bg-custom {
+  background-color: #f9f9f6;
+}
+
+.text-custom {
+  color: #4c5361;
+}
+
+.noScrollBar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.noScrollBar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
