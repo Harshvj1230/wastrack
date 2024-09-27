@@ -31,8 +31,10 @@ export default function Header() {
         <Menu className="mx-5 md:hidden" />
         <Link to="/">
           <img
-            src={""}
-            className="w-12 h-12 mr-4 ml-2 rounded-lg bg-white"
+            src={
+              "https://raw.githubusercontent.com/ForLoopCodes/wastrack/refs/heads/master/logo.png"
+            }
+            className="w-12 h-12 mr-4 mt-2 ml-2 rounded-lg bg-white"
             alt={"studium logo"}
           />
         </Link>
@@ -61,7 +63,7 @@ export default function Header() {
               <Link to="/user/@me">
                 <img
                   alt={`Meet's profile picture`}
-                  src={"https://via.placeholder.com/150"}
+                  src={"https://github.com/shadcn.png"}
                   className="w-8 h-8 mr-6 md:mr-0 rounded-lg"
                 />
               </Link>
