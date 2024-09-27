@@ -76,7 +76,7 @@ export default function Sidebar(props) {
         </Link>
       </ScrollArea>
       <div className="md:w-72 w-screen px-6" style={{ zIndex: 80 }}>
-        <Link to={"/quiz"}>
+        <Link to={"/faqs"}>
           <Button
             variant="ghost"
             className="w-full justify-start text-custom my-0.5 px-3 hover:no-underline"

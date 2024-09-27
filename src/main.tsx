@@ -5,6 +5,7 @@ import "./index.css";
 import { LoginPage } from "@/pages/LoginPage";
 import { DashboardPage } from "@/pages/dashboard";
 import { News } from "@/pages/news";
+import { FaqPage } from "@/pages/faqPage";
 import { SettingsPage } from "@/pages/settings";
 import { Reports } from "@/pages/reports";
 import App from "./App.tsx";
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/faqs",
-        element: <LoginPage newUser={true} />,
+        element: <FaqPage newUser={true} />,
       },
       {
         path: "/settings",
