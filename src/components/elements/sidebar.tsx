@@ -53,7 +53,7 @@ export default function Sidebar(props) {
             Your Reports
           </Button>
         </Link>
-        <Link to={"/question/find"}>
+        <Link to={"/news"}>
           <Button
             variant="ghost"
             className="w-full justify-start text-custom my-0.5 px-3 hover:no-underline"
@@ -86,7 +86,7 @@ export default function Sidebar(props) {
             FAQs
           </Button>
         </Link>
-        <Link to={"/quiz"}>
+        <Link to={"/settings"}>
           <Button
             variant="ghost"
             className="w-full justify-start text-custom my-0.5 px-3 hover:no-underline"

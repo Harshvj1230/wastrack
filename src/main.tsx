@@ -4,6 +4,8 @@ import "./index.css";
 
 import { LoginPage } from "@/pages/LoginPage";
 import { DashboardPage } from "@/pages/dashboard";
+import { News } from "@/pages/news";
+import { Settings } from "@/pages/settings";
 import { Reports } from "@/pages/reports";
 import App from "./App.tsx";
 import "./index.css";
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/news",
-        element: <LoginPage newUser={true} />,
+        element: <News />,
       },
       {
         path: "/rewards",
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/settings",
-        element: <LoginPage newUser={true} />,
+        element: <Settings />,
       },
       {
         path: "/profile",
