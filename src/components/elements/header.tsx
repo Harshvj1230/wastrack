@@ -12,7 +12,6 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Switch } from "@/components/ui/switch";
-import Sidebar from "@/components/elements/sidebar";
 import { Flame, Sun, Menu } from "lucide-react";
 
 export default function Header() {
@@ -28,17 +27,6 @@ export default function Header() {
       style={{ zIndex: 100, backdropFilter: "blur(50px)" }}
     >
       <div className="flex justify-between items-center content-center md:space-x-0 md:ml-4">
-        {viewSideBar && (
-          <div className="hidden md:hidden">
-            <Sidebar />
-          </div>
-        )}
-        <Menu
-          className="mx-5 md:hidden"
-          onClick={() => {
-            setViewSideBar(!viewSideBar);
-          }}
-        />
         <Link to="/">
           <img
             src={

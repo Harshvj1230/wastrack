@@ -172,7 +172,7 @@ export const Reports = () => {
           your recent performance.
         </p>
       </div>
-      <Card className="mr-20 my-5">
+      <Card className="md:mr-20 my-5">
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
             <CardTitle>Line Chart - Interactive</CardTitle>
@@ -255,11 +255,11 @@ export const Reports = () => {
           </ChartContainer>
         </CardContent>
       </Card>
-      <div className="grid grid-cols-3 mr-20">
+      <div className="grid grid-cols-3 md:mr-20">
         {reportData.map(({ month, description }) => (
           <Card
             key={month}
-            className="px-6 py-4 m-1.5 text-slate-500 hover:text-slate-700 hover:pr-8 flex items-center justify-between"
+            className="px-6 py-4 m-1.5 md:text-base text-sm text-slate-500 hover:text-slate-700 hover:pr-8 flex items-center justify-between"
           >
             <div>{month} Report</div>
             <div className="">{"->"}</div>
