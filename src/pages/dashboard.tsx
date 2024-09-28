@@ -29,20 +29,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 const barChartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January",yourUsage:18500,globalAverage:22000},
+  { month: "February",yourUsage:21100,globalAverage:25000},
+  { month: "March",yourUsage:20010,globalAverage:19000 },
+  { month: "April",yourUsage:13570,globalAverage:11000},
+  { month: "May",yourUsage:12660,globalAverage:20000},
+  { month: "June",yourUsage:16380,globalAverage:17000},
 ];
 const barChartConfig = {
-  desktop: {
-    label: "Desktop",
+  yourUsage: {
+    label: "Usage",
     color: "hsl(var(--chart-1))",
   },
-  mobile: {
-    label: "Mobile",
+  globalAverage: {
+    label: "Avg. ",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
@@ -236,17 +236,13 @@ export const DashboardPage = () => {
                   cursor={false}
                   content={<ChartTooltipContent indicator="dashed" />}
                 />
-                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                <Bar dataKey="yourUsage" fill="var(--color-yourUsage)" radius={4} />
+                <Bar dataKey="globalAverage" fill="var(--color-globalAverage)" radius={4} />
               </BarChart>
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col items-center gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
+            <div className="flex gap-2 font-medium leading-none text-center">
             </div>
           </CardFooter>
         </Card>
