@@ -16,7 +16,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 export const SettingsPage = () => {
   return (
     <div className="text-slate-700 flex justify-center">
-      <div className="w-1/2">
+      <div className="md:w-1/2">
         <div className="text-custom">
           <h1 className="text-5xl h-14 font-light gradientDefault">Settings</h1>
           <p className="text-base mt-2 mb-4">
@@ -39,7 +39,7 @@ export const SettingsPage = () => {
               </p>
               <div className="flex flex-col mt-2">
                 <label className="text-sm">
-                  Username:
+                  Change Username:
                   <Input
                     type="text"
                     className="mt-1"
@@ -47,7 +47,7 @@ export const SettingsPage = () => {
                   />
                 </label>
                 <label className="text-sm mt-2">
-                  Email:
+                  Change Email:
                   <Input
                     type="email"
                     className="mt-1"
@@ -55,7 +55,7 @@ export const SettingsPage = () => {
                   />
                 </label>
                 <label className="text-sm mt-2">
-                  Password:
+                  Change Password:
                   <Input
                     type="password"
                     className="mt-1"
@@ -63,6 +63,9 @@ export const SettingsPage = () => {
                   />
                 </label>
                 <Button className="mt-4">Save Changes</Button>
+                <Button className="mt-4 bg-red-600" variant="secondary">
+                  Log Out
+                </Button>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -104,8 +107,8 @@ export const SettingsPage = () => {
                 Select your preferred news categories and sources to customize
                 your feed.
               </p>
-              <RadioGroup defaultValue="comfortable">
-                <div className="flex items-center space-x-2">
+              <RadioGroup defaultValue="dafault">
+                <div className="flex items-center space-x-2 mt-3">
                   <RadioGroupItem value="default" id="r1" />
                   <Label htmlFor="r1">Default</Label>
                 </div>
@@ -156,42 +159,6 @@ export const SettingsPage = () => {
                 <span>Dark Mode</span>
                 <Switch />
               </div>
-              <div className="flex items-center justify-between mt-2">
-                <span>Font Size</span>
-                <select className="mt-1 border rounded p-1">
-                  <option value="small">Small</option>
-                  <option value="medium" selected>
-                    Medium
-                  </option>
-                  <option value="large">Large</option>
-                </select>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* Language Settings */}
-          <AccordionItem value="language-settings">
-            <AccordionTrigger>
-              <div className="flex justify-start items-center">
-                <TrendingUp size={18} className="mr-3" />
-                Language
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              <p>Select your preferred language for the app.</p>
-              <select className="mt-1 border rounded p-2">
-                {" "}
-                <Checkbox id="terms" />
-                <label
-                  htmlFor="terms"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  English
-                </label>
-                <option value="spanish">Spanish</option>
-                <option value="french">French</option>
-                <option value="german">German</option>
-              </select>
             </AccordionContent>
           </AccordionItem>
 
@@ -200,7 +167,7 @@ export const SettingsPage = () => {
             <AccordionTrigger>
               <div className="flex justify-start items-center">
                 <Settings size={18} className="mr-3" />
-                Logout
+                Harmful settings
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -208,8 +175,11 @@ export const SettingsPage = () => {
                 Click to log out of your account. Make sure to save any changes
                 before proceeding.
               </p>
-              <Button variant="destructive" className="mt-2">
-                Logout
+              <Button variant="secondary" className="mt-2 w-full bg-red-600">
+                Delete Account
+              </Button>
+              <Button variant="secondary" className="mt-2 w-full">
+                Disable Account
               </Button>
             </AccordionContent>
           </AccordionItem>

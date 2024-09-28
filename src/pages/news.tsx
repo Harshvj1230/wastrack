@@ -10,9 +10,9 @@ import {
 export const News = () => {
   return (
     <div className="text-slate-700 flex justify-center">
-      <div className="w-1/2">
+      <div className="md:w-1/2 md:mx-5 text-sm">
         <div className="text-custom">
-          <h1 className="text-5xl h-14 font-light gradientDefault">
+          <h1 className="text-5xl font-light gradientDefault">
             Latest news in your area.
           </h1>
           <p className="text-base mt-2 mb-4">
@@ -26,7 +26,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Usage Trends in Your Area
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -57,7 +60,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Is it Accessible?
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -86,7 +92,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Is it Styled?
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -114,7 +123,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Average Household Water Consumption
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -143,7 +155,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Conservation Tips
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -171,7 +186,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Impact of Drought on Water Supply
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -200,7 +218,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Quality Reports
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -229,7 +250,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Upcoming Water Conservation Programs
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -258,7 +282,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Community Water Usage Challenge
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -286,7 +313,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 New Water Meter Installation
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -314,7 +344,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Importance of Rainwater Harvesting
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -343,7 +376,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Usage During Summer Months
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -371,7 +407,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Pollution Awareness
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -397,7 +436,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Tips for Reducing Outdoor Water Usage
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -423,7 +465,10 @@ export const News = () => {
               <div className="flex justify-start items-center">
                 <Newspaper size={18} className="mr-3" />
                 Water Utility Bill Analysis
-                <p className="ml-2 text-slate-400"> • 3 hrs ago / 3 min read</p>
+                <p className="ml-2 text-slate-400 md:inline-block hidden">
+                  {" "}
+                  • 3 hrs ago / 3 min read
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>

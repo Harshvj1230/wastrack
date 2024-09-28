@@ -16,14 +16,11 @@ export default function Sidebar(props) {
   return (
     <div
       className={
-        "fixed top-0 left-0 flex flex-col h-full pt-2 pb-20 mt-16 bg-white md:bg-opacity-50 md:flex"
+        "fixed top-0 left-0 flex flex-col h-full pt-2 pb-20 mt-16 bg-white md:bg-opacity-50 md:flex hidden"
       }
       style={{ zIndex: 80 }}
     >
-      <ScrollArea
-        className="h-full md:w-72 w-screen px-6"
-        style={{ zIndex: 80 }}
-      >
+      <ScrollArea className="h-full w-72 px-6" style={{ zIndex: 80 }}>
         <Link to={"/"}>
           <Button
             variant="ghost"

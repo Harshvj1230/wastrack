@@ -205,15 +205,13 @@ export const Rewards = () => {
   return (
     <div>
       <div className="text-custom h-full">
-        <h1 className="text-5xl font-light gradientDefault">
-          Your Recent Reports.
-        </h1>
+        <h1 className="text-5xl font-light gradientDefault">Your Rewards.</h1>
         <p className="text-base mt-4 mb-4 w-1/2">
           Take a closer look at the reports below to gain valuable insights into
           your recent performance.
         </p>
       </div>
-      <div className="grid grid-cols-3 mr-20">
+      <div className="grid md:grid-cols-3 grid-cols-1 md:mr-20">
         {reportData.map(({ month, description }) => (
           <Card
             key={month}
@@ -224,7 +222,7 @@ export const Rewards = () => {
           </Card>
         ))}
       </div>
-      <Card className="mr-20 my-5">
+      <Card className="md:mr-20 my-5">
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
             <CardTitle>Line Chart - Interactive</CardTitle>
@@ -307,9 +305,9 @@ export const Rewards = () => {
           </ChartContainer>
         </CardContent>
       </Card>
-      <hr className="my-8 mr-20" />
+      <hr className="my-8 md:mr-20" />
       <h1 className="text-5xl my-5 gradientDefault">Rewards.</h1>
-      <div className="grid grid-cols-5 mr-20">
+      <div className="md:mr-20 grid grid-cols-1 lg:grid-cols-4">
         {giftData.map(({ month, description, image }) => (
           <Card
             key={month}
@@ -321,7 +319,7 @@ export const Rewards = () => {
           </Card>
         ))}
       </div>
-      <div>
+      <div className="md:mr-20">
         <h2 className="text-4xl font-semibold gradientDefault my-4">
           Terms and Conditions
         </h2>
