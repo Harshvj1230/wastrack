@@ -29,20 +29,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 const barChartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", usage: 186, avgusage: 80 },
+  { month: "February", usage: 305, avgusage: 200 },
+  { month: "March", usage: 237, avgusage: 120 },
+  { month: "April", usage: 73, avgusage: 190 },
+  { month: "May", usage: 209, avgusage: 130 },
+  { month: "June", usage: 214, avgusage: 140 },
 ];
 const barChartConfig = {
-  desktop: {
-    label: "Desktop",
+  usage: {
+    label: "usage",
     color: "hsl(var(--chart-1))",
   },
-  mobile: {
-    label: "Mobile",
+  avgusage: {
+    label: "avgusage",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
@@ -173,7 +173,7 @@ export const DashboardPage = () => {
     return pieChartData.reduce((acc, curr) => acc + curr.usage, 0);
   }, []);
   const [activeChart, setActiveChart] =
-    React.useState<keyof typeof barChartConfig>("desktop");
+    React.useState<keyof typeof barChartConfig>("usage");
   const total = React.useMemo(
     () => ({
       thisMonth: lineChartData.reduce((acc, curr) => acc + curr.thisMonth, 0),
@@ -191,7 +191,7 @@ export const DashboardPage = () => {
       <div className="grid grid-cols-3 mr-20 space-x-5">
         <Card className="h-96 rounded-xl bg-opacity-50">
           <CardHeader>
-            <CardTitle>Your usage vs global average.</CardTitle>
+            <CardTitle>Your usage vs global average</CardTitle>
             <CardDescription>January - June 2024</CardDescription>
           </CardHeader>
           <CardContent>
@@ -212,18 +212,22 @@ export const DashboardPage = () => {
                   cursor={false}
                   content={<ChartTooltipContent indicator="dashed" />}
                 />
-                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                <Bar dataKey="usage" fill="var(--color-usage)" radius={4} />
+                <Bar dataKey="avgusage" fill="var(--color-avgusage)" radius={4} />
               </BarChart>
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col items-center gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none"></div>
+            <div className="flex gap-2 font-medium leading-none text-center">
+              
+            You are consuming more water! <br/> kindly consume according to the need.
+            </div>
+        
           </CardFooter>
         </Card>
         <Card className="h-96 rounded-xl bg-opacity-50">
           <CardHeader className="pb-0">
-            <CardTitle>Overall usage per House.</CardTitle>
+            <CardTitle>Overall usage per House</CardTitle>
             <CardDescription>January - June 2024</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-0">
@@ -265,9 +269,8 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              KILO
-                              <br />
-                              LITERS
+                              KILO<br/>LITERS
+                              
                             </tspan>
                           </text>
                         );
@@ -279,10 +282,10 @@ export const DashboardPage = () => {
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none"></div>
-            <div className="leading-none text-muted-foreground">
-              Overall Usage depends on number of Household Size and Composition
-              , Geographic Location and regional climate.
+            <div className="flex gap-2 font-medium leading-none">
+            </div>
+            <div className="leading-none text-muted-foreground text-center">
+          Overall Usage depends on number of Household Size and Composition,Geographic Location and regional climate.
             </div>
           </CardFooter>
         </Card>
@@ -330,7 +333,7 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              LITERS
+                             LITERS 
                             </tspan>
                           </text>
                         );
@@ -342,11 +345,13 @@ export const DashboardPage = () => {
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none">
-              In context of household water usage , laundry stands out as a
-              significant contributor.
+            <div className="flex gap-2 font-medium leading-none text-ceneter">
+            In context of household water usage,laundry alone stands out as a significant contributor. 
+
             </div>
-            <div className="leading-none text-muted-foreground"></div>
+            <div className="leading-none text-muted-foreground">
+          
+            </div>
           </CardFooter>
         </Card>
       </div>
@@ -354,7 +359,9 @@ export const DashboardPage = () => {
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
             <CardTitle>Daily Interactive Chart</CardTitle>
-            <CardDescription></CardDescription>
+            <CardDescription>
+          
+            </CardDescription>
           </div>
           <div className="flex">
             {["thisMonth", "prevMonth"].map((key) => {
@@ -431,6 +438,7 @@ export const DashboardPage = () => {
           </ChartContainer>
         </CardContent>
       </Card>
+          
     </div>
   );
 };
