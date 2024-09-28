@@ -17,6 +17,7 @@ import { Flame, Sun, Menu } from "lucide-react";
 
 export default function Header() {
   const [streak, setStreak] = useState(350);
+  const [viewSideBar, setViewSideBar] = useState(true);
   const navigate = useNavigate();
 
   const pages = ["1", "2", "3", "Social"];
@@ -27,8 +28,17 @@ export default function Header() {
       style={{ zIndex: 100, backdropFilter: "blur(50px)" }}
     >
       <div className="flex justify-between items-center content-center md:space-x-0 md:ml-4">
-        <Sidebar disabled={true} />
-        <Menu className="mx-5 md:hidden" />
+        {viewSideBar && (
+          <div className="hidden md:hidden">
+            <Sidebar />
+          </div>
+        )}
+        <Menu
+          className="mx-5 md:hidden"
+          onClick={() => {
+            setViewSideBar(!viewSideBar);
+          }}
+        />
         <Link to="/">
           <img
             src={
@@ -51,16 +61,18 @@ export default function Header() {
                 </div>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <div className="px-2 text-sm font-semibold text-orange-500 hover:text-orange-500 flex justify-center items-center transition-all">
-                  <Flame strokeWidth={3} size={18} className="mr-2" />
-                  {streak}
-                </div>
+                <Link to="/rewards">
+                  <div className="px-2 text-sm font-semibold text-orange-500 hover:text-orange-500 flex justify-center items-center transition-all">
+                    <Flame strokeWidth={3} size={18} className="mr-2" />
+                    {streak}
+                  </div>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <HoverCard>
             <HoverCardTrigger asChild className="text-sm font-bold">
-              <Link to="/user/@me">
+              <Link to="/settings">
                 <img
                   alt={`Meet's profile picture`}
                   src={"https://github.com/shadcn.png"}

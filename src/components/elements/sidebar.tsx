@@ -13,19 +13,10 @@ import {
 } from "lucide-react";
 
 export default function Sidebar(props) {
-  if (props.disabled) {
-    return (
-      <div
-        className={
-          "fixed top-0 left-0 flex flex-col h-0 pt-2 pb-20 mt-16 bg-white md:bg-opacity-50 block"
-        }
-      ></div>
-    );
-  }
   return (
     <div
       className={
-        "fixed top-0 left-0 flex flex-col h-full pt-2 pb-20 mt-16 bg-white md:bg-opacity-50 block"
+        "fixed top-0 left-0 flex flex-col h-full pt-2 pb-20 mt-16 bg-white md:bg-opacity-50 md:flex"
       }
       style={{ zIndex: 80 }}
     >
@@ -64,7 +55,7 @@ export default function Sidebar(props) {
           </Button>
         </Link>
 
-        <Link to={"/quiz"}>
+        <Link to={"/rewards"}>
           <Button
             variant="ghost"
             className="w-full justify-start text-custom my-0.5 px-3 hover:no-underline"
