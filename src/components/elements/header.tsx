@@ -45,7 +45,7 @@ export default function Header() {
               <NavigationMenuItem>
                 <div className="px-2 text-sm font-semibold text-neutral-500 hover:text-neutral-300 flex justify-center items-center transition-all">
                   <Sun strokeWidth={3} size={18} className="mr-2" />
-                  Light
+                  
                 </div>
               </NavigationMenuItem>
               <NavigationMenuItem>
