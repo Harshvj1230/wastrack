@@ -122,58 +122,58 @@ const pieChartConfig2 = {
     color: "hsl(var(--chart-6))",
   },
 } satisfies ChartConfig;
-const lineChartData = [
-  { date: "2024-06-01", thisMonth: 178, prevMonth: 200 },
-  { date: "2024-06-02", thisMonth: 470, prevMonth: 410 },
-  { date: "2024-06-03", thisMonth: 103, prevMonth: 160 },
-  { date: "2024-06-04", thisMonth: 439, prevMonth: 380 },
-  { date: "2024-06-05", thisMonth: 88, prevMonth: 140 },
-  { date: "2024-06-06", thisMonth: 294, prevMonth: 250 },
-  { date: "2024-06-07", thisMonth: 323, prevMonth: 370 },
-  { date: "2024-06-08", thisMonth: 385, prevMonth: 320 },
-  { date: "2024-06-09", thisMonth: 438, prevMonth: 480 },
-  { date: "2024-06-10", thisMonth: 155, prevMonth: 200 },
-  { date: "2024-06-11", thisMonth: 92, prevMonth: 150 },
-  { date: "2024-06-12", thisMonth: 492, prevMonth: 420 },
-  { date: "2024-06-13", thisMonth: 81, prevMonth: 130 },
-  { date: "2024-06-14", thisMonth: 426, prevMonth: 380 },
-  { date: "2024-06-15", thisMonth: 307, prevMonth: 350 },
-  { date: "2024-06-16", thisMonth: 371, prevMonth: 310 },
-  { date: "2024-06-17", thisMonth: 475, prevMonth: 520 },
-  { date: "2024-06-18", thisMonth: 107, prevMonth: 170 },
-  { date: "2024-06-19", thisMonth: 341, prevMonth: 290 },
-  { date: "2024-06-20", thisMonth: 408, prevMonth: 450 },
-  { date: "2024-06-21", thisMonth: 169, prevMonth: 210 },
-  { date: "2024-06-22", thisMonth: 317, prevMonth: 270 },
-  { date: "2024-06-23", thisMonth: 480, prevMonth: 530 },
-  { date: "2024-06-24", thisMonth: 132, prevMonth: 180 },
-  { date: "2024-06-25", thisMonth: 141, prevMonth: 190 },
-  { date: "2024-06-26", thisMonth: 434, prevMonth: 380 },
-  { date: "2024-06-27", thisMonth: 448, prevMonth: 490 },
-  { date: "2024-06-28", thisMonth: 149, prevMonth: 200 },
-  { date: "2024-06-29", thisMonth: 103, prevMonth: 160 },
-  { date: "2024-06-30", thisMonth: 446, prevMonth: 400 },
-];
-const lineChartConfig = {
-  views: {
-    label: "Page Views",
-  },
-  thisMonth: {
-    label: "thisMonth",
-    color: "hsl(var(--chart-1))",
-  },
-  prevMonth: {
-    label: "prevMonth",
-    color: "hsl(var(--chart-2))",
-  },
-} satisfies ChartConfig;
+  const lineChartData = [
+    { date: "2024-06-01", thisMonth: 178, prevMonth: 200 },
+    { date: "2024-06-02", thisMonth: 470, prevMonth: 410 },
+    { date: "2024-06-03", thisMonth: 103, prevMonth: 160 },
+    { date: "2024-06-04", thisMonth: 439, prevMonth: 380 },
+    { date: "2024-06-05", thisMonth: 88, prevMonth :140 },
+    { date: "2024-06-06", thisMonth: 294, prevMonth: 250 },
+    { date: "2024-06-07", thisMonth: 323, prevMonth: 370 },
+    { date: "2024-06-08", thisMonth: 385, prevMonth: 320 },
+    { date: "2024-06-09", thisMonth: 438, prevMonth: 480 },
+    { date: "2024-06-10", thisMonth: 155, prevMonth: 200 },
+    { date: "2024-06-11", thisMonth: 92,  prevMonth :150 },
+    { date: "2024-06-12", thisMonth: 492, prevMonth: 420 },
+    { date: "2024-06-13", thisMonth: 81, prevMonth: 130 },
+    { date: "2024-06-14", thisMonth: 426, prevMonth: 380 },
+    { date: "2024-06-15", thisMonth: 307, prevMonth: 350 },
+    { date: "2024-06-16", thisMonth: 371, prevMonth: 310 },
+    { date: "2024-06-17", thisMonth: 475, prevMonth: 520 },
+    { date: "2024-06-18", thisMonth: 107, prevMonth: 170 },
+    { date: "2024-06-19", thisMonth: 341, prevMonth: 290 },
+    { date: "2024-06-20", thisMonth: 408, prevMonth: 450 },
+    { date: "2024-06-21", thisMonth: 169, prevMonth: 210 },
+    { date: "2024-06-22", thisMonth: 317, prevMonth: 270 },
+    { date: "2024-06-23", thisMonth: 480, prevMonth: 530 },
+    { date: "2024-06-24", thisMonth: 132, prevMonth: 180 },
+    { date: "2024-06-25", thisMonth: 141, prevMonth: 190 },
+    { date: "2024-06-26", thisMonth: 434, prevMonth: 380 },
+    { date: "2024-06-27", thisMonth: 448, prevMonth: 490 },
+    { date: "2024-06-28", thisMonth: 149, prevMonth: 200 },
+    { date: "2024-06-29", thisMonth: 103, prevMonth: 160 },
+    { date: "2024-06-30", thisMonth: 446, prevMonth: 400 },
+  ];
+  const lineChartConfig = {
+    views: {
+      label: "Water Level",
+    },
+    thisMonth: {
+      label: "This Month",
+      color: "hsl(var(--chart-1))",
+    },
+    prevMonth: {
+      label: "Last Month",
+      color: "hsl(var(--chart-2))",
+    },
+  } satisfies ChartConfig;
 
 export const DashboardPage = () => {
   const totalVisitors = React.useMemo(() => {
     return pieChartData.reduce((acc, curr) => acc + curr.usage, 0);
   }, []);
   const [activeChart, setActiveChart] =
-    React.useState<keyof typeof barChartConfig>("usage");
+    React.useState<keyof typeof barChartConfig>("thisMonth");
   const total = React.useMemo(
     () => ({
       thisMonth: lineChartData.reduce((acc, curr) => acc + curr.thisMonth, 0),
@@ -355,12 +355,12 @@ export const DashboardPage = () => {
           </CardFooter>
         </Card>
       </div>
-      <Card className="md:mr-20 mt-5">
+      <Card className="md:mr-20 my-5">
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-            <CardTitle>Daily Interactive Chart</CardTitle>
+            <CardTitle>Water Usage level</CardTitle>
             <CardDescription>
-          
+              Showing total water usage for the last 3 months
             </CardDescription>
           </div>
           <div className="flex">
@@ -438,7 +438,6 @@ export const DashboardPage = () => {
           </ChartContainer>
         </CardContent>
       </Card>
-          
     </div>
   );
 };
