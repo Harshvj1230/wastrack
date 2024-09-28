@@ -48,40 +48,77 @@ const barChartConfig = {
 } satisfies ChartConfig;
 
 export const description1 = "A donut chart with text";
-const PieChartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "ie", visitors: 403, fill: "var(--color-ie)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
+const pieChartData = [
+  { home: "house1", usage: 22, fill: "var(--color-house1)" },
+  { home: "house2", usage: 40, fill: "var(--color-house2)" },
+  { home: "house3", usage: 38, fill: "var(--color-house3)" },
+  { home: "house4", usage: 37, fill: "var(--color-house4)" },
+  { home: "house5", usage: 39, fill: "var(--color-house5)" },
+  { home: "house6", usage: 43, fill: "var(--color-house6)" },
 ];
 const pieChartConfig = {
-  visitors: {
-    label: "Visitors",
+  usage: {
+    label: "usage",
   },
-  chrome: {
-    label: "Chrome",
+  house1: {
+    label: "House 1",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  house2: {
+    label: "House 2",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  house3: {
+    label: "House 3",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
+  house4: {
+    label: "House 4",
     color: "hsl(var(--chart-4))",
   },
-  ie: {
-    label: "IE",
+  house5: {
+    label: "House 5",
     color: "hsl(var(--chart-5))",
   },
-  other: {
-    label: "Other",
+  house6: {
+    label: "House 6",
+    color: "hsl(var(--chart-6))",
+  },
+} satisfies ChartConfig;
+const pieChartData2 = [
+  { home: "cooking ", usage: 5, fill: "var(--color-cooking)" },
+  { home: "drinking", usage: 20, fill: "var(--color-drinking" },
+  { home: "toilets", usage: 3, fill: "var(--color-toilets)" },
+  { home: "laundary", usage: 45, fill: "var(--color-laundary)" },
+  { home: "cleaning", usage: 10, fill: "var(--color-cleaning)" },
+  { home: "dishwashing", usage: 15, fill: "var(--color-dishwashing)" },
+];
+const pieChartConfig2 = {
+  usage: {
+    label: "usage",
+  },
+  cooking: {
+    label: "cookng",
+    color: "hsl(var(--chart-1))",
+  },
+  drinking: {
+    label: "drinking",
+    color: "hsl(var(--chart-2))",
+  },
+  toilets: {
+    label: "toilets",
+    color: "hsl(var(--chart-3))",
+  },
+  laundary: {
+    label: "laundary",
+    color: "hsl(var(--chart-4))",
+  },
+  cleaning: {
+    label: "cleaning",
+    color: "hsl(var(--chart-5))",
+  },
+  dishwashing: {
+    label: "dishwashing",
     color: "hsl(var(--chart-6))",
   },
 } satisfies ChartConfig;
@@ -194,7 +231,7 @@ const lineChartConfig = {
 
 export const DashboardPage = () => {
   const totalVisitors = React.useMemo(() => {
-    return PieChartData.reduce((acc, curr) => acc + curr.visitors, 0);
+    return pieChartData.reduce((acc, curr) => acc + curr.usage, 0);
   }, []);
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof barChartConfig>("desktop");
@@ -243,11 +280,9 @@ export const DashboardPage = () => {
           </CardContent>
           <CardFooter className="flex-col items-center gap-2 text-sm">
             <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              
             </div>
-            <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
-            </div>
+            
           </CardFooter>
         </Card>
         <Card className="h-96 rounded-xl bg-opacity-50">
@@ -266,9 +301,9 @@ export const DashboardPage = () => {
                   content={<ChartTooltipContent hideLabel />}
                 />
                 <Pie
-                  data={PieChartData}
-                  dataKey="visitors"
-                  nameKey="browser"
+                  data={pieChartData}
+                  dataKey="usage"
+                  nameKey="home"
                   innerRadius={60}
                   strokeWidth={5}
                 >
@@ -294,7 +329,8 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              Visitors
+                              KILO<br/>LITERS
+                              
                             </tspan>
                           </text>
                         );
@@ -307,21 +343,21 @@ export const DashboardPage = () => {
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
             <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+               
             </div>
             <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
+          
             </div>
           </CardFooter>
         </Card>
         <Card className="h-96 rounded-xl bg-opacity-50">
           <CardHeader className="pb-0">
-            <CardTitle>Pie Chart - Donut with Text</CardTitle>
+            <CardTitle>Household chores that uses water</CardTitle>
             <CardDescription>January - June 2024</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-0">
             <ChartContainer
-              config={pieChartConfig}
+              config={pieChartConfig2}
               className="mx-auto aspect-square max-h-60 h-full"
             >
               <PieChart>
@@ -330,9 +366,9 @@ export const DashboardPage = () => {
                   content={<ChartTooltipContent hideLabel />}
                 />
                 <Pie
-                  data={PieChartData}
-                  dataKey="visitors"
-                  nameKey="browser"
+                  data={pieChartData2}
+                  dataKey="usage"
+                  nameKey="home"
                   innerRadius={60}
                   strokeWidth={5}
                 >
@@ -358,7 +394,7 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              Visitors
+                             LITERS 
                             </tspan>
                           </text>
                         );
@@ -371,10 +407,10 @@ export const DashboardPage = () => {
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
             <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              
             </div>
             <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
+            
             </div>
           </CardFooter>
         </Card>
@@ -382,9 +418,9 @@ export const DashboardPage = () => {
       <Card className="mr-20 mt-5">
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-            <CardTitle>Line Chart - Interactive</CardTitle>
+            <CardTitle>Daily Interactive Chart</CardTitle>
             <CardDescription>
-              Showing total visitors for the last 3 months
+             
             </CardDescription>
           </div>
           <div className="flex">
@@ -462,89 +498,7 @@ export const DashboardPage = () => {
           </ChartContainer>
         </CardContent>
       </Card>
-      <Card className="mr-20 mt-5">
-        <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-          <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-            <CardTitle>Line Chart - Interactive</CardTitle>
-            <CardDescription>
-              Showing total visitors for the last 3 months
-            </CardDescription>
-          </div>
-          <div className="flex">
-            {["desktop", "mobile"].map((key) => {
-              const chart = key as keyof typeof lineChartConfig;
-              return (
-                <button
-                  key={chart}
-                  data-active={activeChart === chart}
-                  className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-                  onClick={() => setActiveChart(chart)}
-                >
-                  <span className="text-xs text-muted-foreground">
-                    {lineChartConfig[chart].label}
-                  </span>
-                  <span className="text-lg font-bold leading-none sm:text-3xl">
-                    {total[key as keyof typeof total].toLocaleString()}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </CardHeader>
-        <CardContent className="px-2 sm:p-6">
-          <ChartContainer
-            config={lineChartConfig}
-            className="aspect-auto h-[250px] w-full"
-          >
-            <LineChart
-              accessibilityLayer
-              data={lineChartData}
-              margin={{
-                left: 12,
-                right: 12,
-              }}
-            >
-              <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="date"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                minTickGap={32}
-                tickFormatter={(value) => {
-                  const date = new Date(value);
-                  return date.toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                  });
-                }}
-              />
-              <ChartTooltip
-                content={
-                  <ChartTooltipContent
-                    className="w-[150px]"
-                    nameKey="views"
-                    labelFormatter={(value) => {
-                      return new Date(value).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      });
-                    }}
-                  />
-                }
-              />
-              <Line
-                dataKey={activeChart}
-                type="monotone"
-                stroke={`var(--color-${activeChart})`}
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ChartContainer>
-        </CardContent>
-      </Card>
+          
     </div>
   );
 };
