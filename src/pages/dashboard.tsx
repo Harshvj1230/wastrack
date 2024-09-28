@@ -48,160 +48,136 @@ const barChartConfig = {
 } satisfies ChartConfig;
 
 export const description1 = "A donut chart with text";
-const PieChartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "ie", visitors: 403, fill: "var(--color-ie)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
+const pieChartData = [
+  { home: "house1", usage: 22, fill: "var(--color-house1)" },
+  { home: "house2", usage: 40, fill: "var(--color-house2)" },
+  { home: "house3", usage: 38, fill: "var(--color-house3)" },
+  { home: "house4", usage: 37, fill: "var(--color-house4)" },
+  { home: "house5", usage: 39, fill: "var(--color-house5)" },
+  { home: "house6", usage: 43, fill: "var(--color-house6)" },
 ];
 const pieChartConfig = {
-  visitors: {
-    label: "Visitors",
+  usage: {
+    label: "usage",
   },
-  chrome: {
-    label: "Chrome",
+  house1: {
+    label: "House 1",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  house2: {
+    label: "House 2",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  house3: {
+    label: "House 3",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
+  house4: {
+    label: "House 4",
     color: "hsl(var(--chart-4))",
   },
-  ie: {
-    label: "IE",
+  house5: {
+    label: "House 5",
     color: "hsl(var(--chart-5))",
   },
-  other: {
-    label: "Other",
+  house6: {
+    label: "House 6",
+    color: "hsl(var(--chart-6))",
+  },
+} satisfies ChartConfig;
+const pieChartData2 = [
+  { home: "cooking ", usage: 5, fill: "var(--color-cooking)" },
+  { home: "drinking", usage: 20, fill: "var(--color-drinking" },
+  { home: "toilets", usage: 3, fill: "var(--color-toilets)" },
+  { home: "laundary", usage: 45, fill: "var(--color-laundary)" },
+  { home: "cleaning", usage: 10, fill: "var(--color-cleaning)" },
+  { home: "dishwashing", usage: 15, fill: "var(--color-dishwashing)" },
+];
+const pieChartConfig2 = {
+  usage: {
+    label: "usage",
+  },
+  cooking: {
+    label: "cookng",
+    color: "hsl(var(--chart-1))",
+  },
+  drinking: {
+    label: "drinking",
+    color: "hsl(var(--chart-2))",
+  },
+  toilets: {
+    label: "toilets",
+    color: "hsl(var(--chart-3))",
+  },
+  laundary: {
+    label: "laundary",
+    color: "hsl(var(--chart-4))",
+  },
+  cleaning: {
+    label: "cleaning",
+    color: "hsl(var(--chart-5))",
+  },
+  dishwashing: {
+    label: "dishwashing",
     color: "hsl(var(--chart-6))",
   },
 } satisfies ChartConfig;
 const lineChartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
+  { date: "2024-06-01", thisMonth: 178, prevMonth: 200 },
+  { date: "2024-06-02", thisMonth: 470, prevMonth: 410 },
+  { date: "2024-06-03", thisMonth: 103, prevMonth: 160 },
+  { date: "2024-06-04", thisMonth: 439, prevMonth: 380 },
+  { date: "2024-06-05", thisMonth: 88, prevMonth: 140 },
+  { date: "2024-06-06", thisMonth: 294, prevMonth: 250 },
+  { date: "2024-06-07", thisMonth: 323, prevMonth: 370 },
+  { date: "2024-06-08", thisMonth: 385, prevMonth: 320 },
+  { date: "2024-06-09", thisMonth: 438, prevMonth: 480 },
+  { date: "2024-06-10", thisMonth: 155, prevMonth: 200 },
+  { date: "2024-06-11", thisMonth: 92, prevMonth: 150 },
+  { date: "2024-06-12", thisMonth: 492, prevMonth: 420 },
+  { date: "2024-06-13", thisMonth: 81, prevMonth: 130 },
+  { date: "2024-06-14", thisMonth: 426, prevMonth: 380 },
+  { date: "2024-06-15", thisMonth: 307, prevMonth: 350 },
+  { date: "2024-06-16", thisMonth: 371, prevMonth: 310 },
+  { date: "2024-06-17", thisMonth: 475, prevMonth: 520 },
+  { date: "2024-06-18", thisMonth: 107, prevMonth: 170 },
+  { date: "2024-06-19", thisMonth: 341, prevMonth: 290 },
+  { date: "2024-06-20", thisMonth: 408, prevMonth: 450 },
+  { date: "2024-06-21", thisMonth: 169, prevMonth: 210 },
+  { date: "2024-06-22", thisMonth: 317, prevMonth: 270 },
+  { date: "2024-06-23", thisMonth: 480, prevMonth: 530 },
+  { date: "2024-06-24", thisMonth: 132, prevMonth: 180 },
+  { date: "2024-06-25", thisMonth: 141, prevMonth: 190 },
+  { date: "2024-06-26", thisMonth: 434, prevMonth: 380 },
+  { date: "2024-06-27", thisMonth: 448, prevMonth: 490 },
+  { date: "2024-06-28", thisMonth: 149, prevMonth: 200 },
+  { date: "2024-06-29", thisMonth: 103, prevMonth: 160 },
+  { date: "2024-06-30", thisMonth: 446, prevMonth: 400 },
 ];
 const lineChartConfig = {
   views: {
     label: "Page Views",
   },
-  desktop: {
-    label: "Desktop",
+  thisMonth: {
+    label: "thisMonth",
     color: "hsl(var(--chart-1))",
   },
-  mobile: {
-    label: "Mobile",
+  prevMonth: {
+    label: "prevMonth",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
 
 export const DashboardPage = () => {
   const totalVisitors = React.useMemo(() => {
-    return PieChartData.reduce((acc, curr) => acc + curr.visitors, 0);
+    return pieChartData.reduce((acc, curr) => acc + curr.usage, 0);
   }, []);
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof barChartConfig>("desktop");
   const total = React.useMemo(
     () => ({
-      desktop: lineChartData.reduce((acc, curr) => acc + curr.desktop, 0),
-      mobile: lineChartData.reduce((acc, curr) => acc + curr.mobile, 0),
+      thisMonth: lineChartData.reduce((acc, curr) => acc + curr.thisMonth, 0),
+      prevMonth: lineChartData.reduce((acc, curr) => acc + curr.prevMonth, 0),
     }),
     []
   );
@@ -242,12 +218,7 @@ export const DashboardPage = () => {
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col items-center gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
-            </div>
+            <div className="flex gap-2 font-medium leading-none"></div>
           </CardFooter>
         </Card>
         <Card className="h-96 rounded-xl bg-opacity-50">
@@ -266,9 +237,9 @@ export const DashboardPage = () => {
                   content={<ChartTooltipContent hideLabel />}
                 />
                 <Pie
-                  data={PieChartData}
-                  dataKey="visitors"
-                  nameKey="browser"
+                  data={pieChartData}
+                  dataKey="usage"
+                  nameKey="home"
                   innerRadius={60}
                   strokeWidth={5}
                 >
@@ -294,7 +265,9 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              Visitors
+                              KILO
+                              <br />
+                              LITERS
                             </tspan>
                           </text>
                         );
@@ -306,22 +279,21 @@ export const DashboardPage = () => {
             </ChartContainer>
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
-            <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
+            <div className="flex gap-2 font-medium leading-none"></div>
             <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
+              Overall Usage depends on number of Household Size and Composition
+              , Geographic Location and regional climate.
             </div>
           </CardFooter>
         </Card>
         <Card className="h-96 rounded-xl bg-opacity-50">
           <CardHeader className="pb-0">
-            <CardTitle>Pie Chart - Donut with Text</CardTitle>
+            <CardTitle>Household chores that uses water</CardTitle>
             <CardDescription>January - June 2024</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-0">
             <ChartContainer
-              config={pieChartConfig}
+              config={pieChartConfig2}
               className="mx-auto aspect-square max-h-60 h-full"
             >
               <PieChart>
@@ -330,9 +302,9 @@ export const DashboardPage = () => {
                   content={<ChartTooltipContent hideLabel />}
                 />
                 <Pie
-                  data={PieChartData}
-                  dataKey="visitors"
-                  nameKey="browser"
+                  data={pieChartData2}
+                  dataKey="usage"
+                  nameKey="home"
                   innerRadius={60}
                   strokeWidth={5}
                 >
@@ -358,7 +330,7 @@ export const DashboardPage = () => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              Visitors
+                              LITERS
                             </tspan>
                           </text>
                         );
@@ -371,107 +343,21 @@ export const DashboardPage = () => {
           </CardContent>
           <CardFooter className="flex-col gap-2 text-sm">
             <div className="flex gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              In context of household water usage , laundry stands out as a
+              significant contributor.
             </div>
-            <div className="leading-none text-muted-foreground">
-              Showing total visitors for the last 6 months
-            </div>
+            <div className="leading-none text-muted-foreground"></div>
           </CardFooter>
         </Card>
       </div>
       <Card className="mr-20 mt-5">
         <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-            <CardTitle>Line Chart - Interactive</CardTitle>
-            <CardDescription>
-              Showing total visitors for the last 3 months
-            </CardDescription>
+            <CardTitle>Daily Interactive Chart</CardTitle>
+            <CardDescription></CardDescription>
           </div>
           <div className="flex">
-            {["desktop", "mobile"].map((key) => {
-              const chart = key as keyof typeof lineChartConfig;
-              return (
-                <button
-                  key={chart}
-                  data-active={activeChart === chart}
-                  className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-                  onClick={() => setActiveChart(chart)}
-                >
-                  <span className="text-xs text-muted-foreground">
-                    {lineChartConfig[chart].label}
-                  </span>
-                  <span className="text-lg font-bold leading-none sm:text-3xl">
-                    {total[key as keyof typeof total].toLocaleString()}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </CardHeader>
-        <CardContent className="px-2 sm:p-6">
-          <ChartContainer
-            config={lineChartConfig}
-            className="aspect-auto h-[250px] w-full"
-          >
-            <LineChart
-              accessibilityLayer
-              data={lineChartData}
-              margin={{
-                left: 12,
-                right: 12,
-              }}
-            >
-              <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="date"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                minTickGap={32}
-                tickFormatter={(value) => {
-                  const date = new Date(value);
-                  return date.toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                  });
-                }}
-              />
-              <ChartTooltip
-                content={
-                  <ChartTooltipContent
-                    className="w-[150px]"
-                    nameKey="views"
-                    labelFormatter={(value) => {
-                      return new Date(value).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      });
-                    }}
-                  />
-                }
-              />
-              <Line
-                dataKey={activeChart}
-                type="monotone"
-                stroke={`var(--color-${activeChart})`}
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ChartContainer>
-        </CardContent>
-      </Card>
-      <Card className="mr-20 mt-5">
-        <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-          <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-            <CardTitle>Line Chart - Interactive</CardTitle>
-            <CardDescription>
-              Showing total visitors for the last 3 months
-            </CardDescription>
-          </div>
-          <div className="flex">
-            {["desktop", "mobile"].map((key) => {
+            {["thisMonth", "prevMonth"].map((key) => {
               const chart = key as keyof typeof lineChartConfig;
               return (
                 <button
